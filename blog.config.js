@@ -58,23 +58,23 @@ const BLOG = {
 
   // // 其它复杂配置
   // // 原配置文件过长，且并非所有人都会用到，故此将配置拆分到/conf/目录下, 按需找到对应文件并修改即可
-  // ...require('./conf/comment.config'), // 评论插件
-  // ...require('./conf/contact.config'), // 作者联系方式配置
-  // ...require('./conf/post.config'), // 文章与列表配置
-  // ...require('./conf/analytics.config'), // 站点访问统计
-  // ...require('./conf/image.config'), // 网站图片相关配置
-  // ...require('./conf/font.config'), // 网站字体
-  // ...require('./conf/right-click-menu'), // 自定义右键菜单相关配置
-  // ...require('./conf/code.config'), // 网站代码块样式
-  // ...require('./conf/animation.config'), // 动效美化效果
-  // ...require('./conf/widget.config'), // 悬浮在网页上的挂件，聊天客服、宠物挂件、音乐播放器等
-  // ...require('./conf/ad.config'), // 广告营收插件
-  // ...require('./conf/plugin.config'), // 其他第三方插件 algolia全文索引
+  ...require('./conf/comment.config'), // 评论插件
+  ...require('./conf/contact.config'), // 作者联系方式配置
+  ...require('./conf/post.config'), // 文章与列表配置
+  ...require('./conf/analytics.config'), // 站点访问统计
+  ...require('./conf/image.config'), // 网站图片相关配置
+  ...require('./conf/font.config'), // 网站字体
+  ...require('./conf/right-click-menu'), // 自定义右键菜单相关配置
+  ...require('./conf/code.config'), // 网站代码块样式
+  ...require('./conf/animation.config'), // 动效美化效果
+  ...require('./conf/widget.config'), // 悬浮在网页上的挂件，聊天客服、宠物挂件、音乐播放器等
+  ...require('./conf/ad.config'), // 广告营收插件
+  ...require('./conf/plugin.config'), // 其他第三方插件 algolia全文索引
 
-  // // 高级用法
-  // ...require('./conf/layout-map.config'), // 路由与布局映射自定义，例如自定义特定路由的页面布局
-  // ...require('./conf/notion.config'), // 读取notion数据库相关的扩展配置，例如自定义表头
-  // ...require('./conf/dev.config'), // 开发、调试时需要关注的配置
+  // 高级用法
+  ...require('./conf/layout-map.config'), // 路由与布局映射自定义，例如自定义特定路由的页面布局
+  ...require('./conf/notion.config'), // 读取notion数据库相关的扩展配置，例如自定义表头
+  ...require('./conf/dev.config'), // 开发、调试时需要关注的配置
 
   // 自定义外部脚本，外部样式
   CUSTOM_EXTERNAL_JS: [''], // e.g. ['http://xx.com/script.js','http://xx.com/script.js']
@@ -482,7 +482,8 @@ const BLOG = {
     process.env.npm_lifecycle_event === 'export', // 在打包过程中默认开启缓存，开发或运行时开启此功能意义不大。
   isProd: process.env.VERCEL_ENV === 'production' || process.env.EXPORT, // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)  isProd: process.env.VERCEL_ENV === 'production' // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
   BUNDLE_ANALYZER: process.env.ANALYZE === 'true' || false, // 是否展示编译依赖内容与大小
-  VERSION: process.env.NEXT_PUBLIC_VERSION // 版本号
+  VERSION: process.env.NEXT_PUBLIC_VERSION, // 版本号
+  UUID_REDIRECT: process.env.UUID_REDIRECT || false
 }
 
 module.exports = BLOG
