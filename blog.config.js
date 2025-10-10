@@ -20,6 +20,8 @@ const BLOG = {
     process.env.NEXT_PUBLIC_GREETING_WORDS ||
     'Hi, this is a greeting.',
 
+  API_BASE_URL: process.env.API_BASE_URL || 'https://www.notion.so/api/v3', // API默认请求地址,可以配置成自己的地址例如：https://[xxxxx].notion.site/api/v3
+  // Important page_id！！！Duplicate Template from  https://tanghh.notion.site/02ab3b8678004aa69e9e415905ef32a5
 
   AUTHOR: process.env.NEXT_PUBLIC_AUTHOR || 'Parker Chen', // 您的昵称 例如 tangly1024
   BIO: process.env.NEXT_PUBLIC_BIO || 'A developer', // 作者简介
